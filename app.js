@@ -1,7 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
-const mongoSanitize = require("mongo-sanitize");
+const mongoSanitize = require("express-mongo-sanitize");
 const xss = require("xss-clean");
 const rateLimit = require("express-rate-limit");
 
@@ -13,7 +13,7 @@ const limiter = rateLimit({
   message: "Too many request try again in 1 hour",
 });
 
-// Middleware
+// // Middleware
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
