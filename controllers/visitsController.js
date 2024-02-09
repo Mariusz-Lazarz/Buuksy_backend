@@ -101,7 +101,7 @@ exports.checkEmployeeAvailability = async (req, res) => {
           visitDate.isSame(parsedRequestDate, "day")
         );
       })
-      .map((visit) => moment(visit.date).subtract({ hour: 1 }).format("HH:mm"));
+      .map((visit) => moment(visit.date).format("HH:mm"));
 
     res.json({ bookedSlots });
   } catch (error) {
